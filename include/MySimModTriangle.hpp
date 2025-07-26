@@ -1,5 +1,5 @@
-#ifndef H_SHONDY_TRIANGLE
-#define H_SHONDY_TRIANGLE
+#ifndef H_MYSIM_TRIANGLE
+#define H_MYSIM_TRIANGLE
 
 #include "circle.hpp"
 #include "definitions.hpp"
@@ -50,4 +50,4 @@ inline vec3d MySimModTriangle::centerQuick(
 bool sameEdge(const std::array<UIN, 2>& edge1, const std::array<UIN, 2>& edge2);
 
 }  // namespace MySim
-#endif  // H_SHONDY_TRIANGLE
+#endif  // H_MYSIM_TRIANGLE

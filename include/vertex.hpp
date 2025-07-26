@@ -1,5 +1,5 @@
-#ifndef H_SHONDY_VERTEX
-#define H_SHONDY_VERTEX
+#ifndef H_MYSIM_VERTEX
+#define H_MYSIM_VERTEX
 
 #include "definitions.hpp"
 #include <TopoDS_Vertex.hxx>
@@ -18,4 +18,4 @@ class vertex
 };
 
 }  // namespace MySim
-#endif  // H_SHONDY_VERTEX
+#endif  // H_MYSIM_VERTEX

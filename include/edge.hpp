@@ -1,5 +1,5 @@
-#ifndef H_SHONDY_EDGE
-#define H_SHONDY_EDGE
+#ifndef H_MYSIM_EDGE
+#define H_MYSIM_EDGE
 
 #include "definitions.hpp"
 #include "vertex.hpp"
@@ -31,4 +31,4 @@ class edge
 };
 
 }  // namespace MySim
-#endif  // H_SHONDY_EDGE
+#endif  // H_MYSIM_EDGE

@@ -1,5 +1,5 @@
-#ifndef H_SHONDY_SHONMODELERENUMS
-#define H_SHONDY_SHONMODELERENUMS
+#ifndef H_MYSIM_SHONMODELERENUMS
+#define H_MYSIM_SHONMODELERENUMS
 
 #include "definitions.hpp"
 
@@ -25,4 +25,4 @@ enum faceGeometryTypes : int
 };
 
 }  // namespace MySimMod
-#endif  // H_SHONDY_SHONMODELERENUMS
+#endif  // H_MYSIM_SHONMODELERENUMS

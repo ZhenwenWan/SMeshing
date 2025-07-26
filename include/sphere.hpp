@@ -1,5 +1,5 @@
-#ifndef H_SHONDY_SPHERE
-#define H_SHONDY_SPHERE
+#ifndef H_MYSIM_SPHERE
+#define H_MYSIM_SPHERE
 
 #include "basicGeometry.hpp"
 
@@ -70,4 +70,4 @@ inline bool Sphere::behind(const vec3d& point,
 
 }  // namespace MySim
 
-#endif  // H_SHONDY_SPHERE
+#endif  // H_MYSIM_SPHERE

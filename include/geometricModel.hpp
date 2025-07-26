@@ -1,5 +1,5 @@
-#ifndef H_SHONDY_GEOMETRICMODEL
-#define H_SHONDY_GEOMETRICMODEL
+#ifndef H_MYSIM_GEOMETRICMODEL
+#define H_MYSIM_GEOMETRICMODEL
 
 #include "definitions.hpp"
 #include "edge.hpp"
@@ -54,4 +54,4 @@ class geometricModel
 };
 
 }  // namespace MySim
-#endif  // H_SHONDY_GEOMETRICMODEL
+#endif  // H_MYSIM_GEOMETRICMODEL

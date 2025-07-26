@@ -1,5 +1,5 @@
-#ifndef H_SHONDY_NODE
-#define H_SHONDY_NODE
+#ifndef H_MYSIM_NODE
+#define H_MYSIM_NODE
 
 #include "definitions.hpp"
 #include <memory>
@@ -25,4 +25,4 @@ inline const vec3d& node::center() const
 }
 
 }  // namespace MySim
-#endif  // H_SHONDY_NODE
+#endif  // H_MYSIM_NODE

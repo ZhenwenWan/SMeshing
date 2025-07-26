@@ -1,5 +1,5 @@
-#ifndef H_SHONDY_TETMESH
-#define H_SHONDY_TETMESH
+#ifndef H_MYSIM_TETMESH
+#define H_MYSIM_TETMESH
 
 #include "definitions.hpp"
 
@@ -27,4 +27,4 @@ class tetMesh
 };
 
 }  // namespace MySim
-#endif  // H_SHONDY_TETMESH
+#endif  // H_MYSIM_TETMESH

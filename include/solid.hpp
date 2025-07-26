@@ -1,5 +1,5 @@
-#ifndef H_SHONDY_SOLID
-#define H_SHONDY_SOLID
+#ifndef H_MYSIM_SOLID
+#define H_MYSIM_SOLID
 
 #include "definitions.hpp"
 #include "face.hpp"
@@ -54,4 +54,4 @@ class solid
 };
 
 }  // namespace MySim
-#endif  // H_SHONDY_SOLID
+#endif  // H_MYSIM_SOLID

@@ -1,5 +1,5 @@
-#ifndef H_SHONDY_FACE
-#define H_SHONDY_FACE
+#ifndef H_MYSIM_FACE
+#define H_MYSIM_FACE
 
 #include "definitions.hpp"
 #include "node.hpp"
@@ -53,4 +53,4 @@ class face
 };
 
 }  // namespace MySim
-#endif  // H_SHONDY_FACE
+#endif  // H_MYSIM_FACE

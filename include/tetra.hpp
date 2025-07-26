@@ -1,5 +1,5 @@
-#ifndef H_SHONDY_TETRA
-#define H_SHONDY_TETRA
+#ifndef H_MYSIM_TETRA
+#define H_MYSIM_TETRA
 
 #include "definitions.hpp"
 #include "sphere.hpp"
@@ -50,4 +50,4 @@ bool sameTriangle(const std::array<UIN, 3>& triangle1,
                   const std::array<UIN, 3>& triangle2);
 
 }  // namespace MySim
-#endif  // H_SHONDY_TETRA
+#endif  // H_MYSIM_TETRA

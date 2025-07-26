@@ -1,5 +1,5 @@
-#ifndef H_SHONDY_SURFACE
-#define H_SHONDY_SURFACE
+#ifndef H_MYSIM_SURFACE
+#define H_MYSIM_SURFACE
 
 #include "node.hpp"
 #include "surfaceBase.hpp"
@@ -37,4 +37,4 @@ class surface : public surfaceBase
 };
 
 }  // namespace MySim
-#endif  // H_SHONDY_SURFACE
+#endif  // H_MYSIM_SURFACE

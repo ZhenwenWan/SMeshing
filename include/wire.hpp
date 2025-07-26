@@ -1,5 +1,5 @@
-#ifndef H_SHONDY_WIRE
-#define H_SHONDY_WIRE
+#ifndef H_MYSIM_WIRE
+#define H_MYSIM_WIRE
 
 #include "definitions.hpp"
 #include "edge.hpp"
@@ -16,4 +16,4 @@ class wire
 };
 
 }  // namespace MySim
-#endif  // H_SHONDY_WIRE
+#endif  // H_MYSIM_WIRE
