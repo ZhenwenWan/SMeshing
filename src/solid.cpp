@@ -1,5 +1,5 @@
 #include "solid.hpp"
-#include "shonModelerEnums.hpp"
+#include "MySimModEnums.hpp"
 #include "vectorUtil.hpp"
 
 #include <BRepAdaptor_Surface.hxx>
@@ -30,7 +30,7 @@
 #include <vtkUnstructuredGrid.h>
 #include <vtkXMLUnstructuredGridWriter.h>
 
-namespace shonCloud
+namespace MySim
 {
 solid::solid(const TopoDS_Solid& occSolid, int tag)
     : tag_(tag), occSolidTopo_(occSolid)
@@ -59,7 +59,7 @@ void solid::getAndSetMeshNodes(double spacing, vectorVec3d& newNodes)
             newNodes.push_back(oneNode);
             nodes_.push_back(std::make_shared<node>(oneNode));
             auto newVertex = std::make_shared<vertex>(
-                oneNode, shonModeler::vertexTypes::onEdge);
+                oneNode, MySimMod::vertexTypes::onEdge);
             newVertex->tag_ = vertices_.size();
             vertices_.insert({newVertex->tag_, newVertex});
         }
@@ -87,7 +87,7 @@ void solid::getAndSetMeshNodes(double spacing, vectorVec3d& newNodes)
                     newNodes.push_back(xNode);
                     nodes_.push_back(std::make_shared<node>(xNode));
                     auto newVertex = std::make_shared<vertex>(
-                        xNode, shonModeler::vertexTypes::onEdge);
+                        xNode, MySimMod::vertexTypes::onEdge);
                     newVertex->tag_ = vertices_.size();
                     vertices_.insert({newVertex->tag_, newVertex});
                 }
@@ -297,4 +297,4 @@ void solid::writeVerticesToVTK(const std::string& fileName) const
     writer->Write();
 }
 
-}  // namespace shonCloud
+}  // namespace MySim

@@ -4,7 +4,7 @@
 #include "definitions.hpp"
 #include <TopoDS_Vertex.hxx>
 
-namespace shonCloud
+namespace MySim
 {
 class vertex
 {
@@ -17,5 +17,5 @@ class vertex
     vec3d position_;
 };
 
-}  // namespace shonCloud
+}  // namespace MySim
 #endif  // H_SHONDY_VERTEX

@@ -13,7 +13,7 @@
 
 TEST_CASE("occFace", "[occFace]")
 {
-    using namespace shonCloud;
+    using namespace MySim;
     SECTION("boundingBox")
     {
         BRep_Builder aBuilder;

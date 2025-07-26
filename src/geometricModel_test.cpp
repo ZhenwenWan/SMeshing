@@ -5,7 +5,7 @@
 
 TEST_CASE("geometricModel", "[geometricModel]")
 {
-    using namespace shonCloud;
+    using namespace MySim;
 
     SECTION("boundingBox")
     {

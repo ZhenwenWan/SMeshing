@@ -7,7 +7,7 @@
 #include <Geom_Curve.hxx>
 #include <TopoDS_Edge.hxx>
 
-namespace shonCloud
+namespace MySim
 
 {
 class edge
@@ -30,5 +30,5 @@ class edge
     Handle(Geom_Curve) occCurve_;
 };
 
-}  // namespace shonCloud
+}  // namespace MySim
 #endif  // H_SHONDY_EDGE

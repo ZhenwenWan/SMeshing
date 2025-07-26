@@ -1,7 +1,7 @@
 #include "face.hpp"
 #include "edge.hpp"
 #include "logger.hpp"
-#include "shonModelerEnums.hpp"
+#include "MySimModEnums.hpp"
 #include "vectorUtil.hpp"
 
 #include <limits>
@@ -35,7 +35,7 @@
 #include <vtkUnstructuredGrid.h>
 #include <vtkXMLUnstructuredGridWriter.h>
 
-namespace shonCloud
+namespace MySim
 {
 face::face(const TopoDS_Face& occFace, int tag)
     : tag_(tag), occFaceTopo_(occFace)
@@ -46,11 +46,11 @@ face::face(const TopoDS_Face& occFace, int tag)
 
     if (occFace_->DynamicType() == STANDARD_TYPE(Geom_Plane))
     {
-        geometryType_ = shonModeler::faceGeometryTypes::plane;
+        geometryType_ = MySimMod::faceGeometryTypes::plane;
     }
     else if (occFace_->DynamicType() == STANDARD_TYPE(Geom_SphericalSurface))
     {
-        geometryType_ = shonModeler::faceGeometryTypes::sphere;
+        geometryType_ = MySimMod::faceGeometryTypes::sphere;
     }
     else
     {
@@ -79,7 +79,7 @@ void face::getEdgeAndGeometryNodes(vectorVec3d& nodes) const
         {
             for (const auto& oneVertex : oneEdge.second->vertices_)
             {
-                if (oneVertex.second->type_ == shonModeler::vertexTypes::onEdge)
+                if (oneVertex.second->type_ == MySimMod::vertexTypes::onEdge)
                 {
                     nodes.push_back(oneVertex.second->position_);
                 }
@@ -201,7 +201,7 @@ void face::seedNodesInFace(double meshSize, vectorVec3d& newNodes)
         (int)round(distY / (meshSize * std::sqrt(3.0) / 2.0));
     double spacing = distX / noOfparticlesInX;
 
-    if (geometryType_ == shonModeler::faceGeometryTypes::sphere)
+    if (geometryType_ == MySimMod::faceGeometryTypes::sphere)
     {
         BRepAdaptor_Surface surface(occFaceTopo_);
         gp_Sphere sphere = surface.Sphere();
@@ -211,7 +211,7 @@ void face::seedNodesInFace(double meshSize, vectorVec3d& newNodes)
         spacing = (end[0] - origin[0]) / noOfparticlesInX;
     }
 
-    if (geometryType_ == shonModeler::faceGeometryTypes::sphere)
+    if (geometryType_ == MySimMod::faceGeometryTypes::sphere)
     {
         const int& nodesOfShpere = (int)round(3.37 * 3.37 / spacing / spacing);
         for (int n = 0; n < nodesOfShpere; n++)
@@ -342,7 +342,7 @@ void face::triangulate()
 
             for (const auto& oneEdge : oneTriangle->edges_)
             {
-                auto newTriangle = std::make_shared<shonMondelerTriangle>(
+                auto newTriangle = std::make_shared<MySimModTriangle>(
                     oneEdge[0], oneEdge[1], nodeID, nodes_);
                 if (newTriangle->area_ > EMINUS13)
                 {
@@ -396,7 +396,7 @@ void face::triangulateBowyerWatson()
     for (UIN nodeID = 0; nodeID < nodes_.size(); ++nodeID)
     {
         const auto& oneNode = nodes_[nodeID];
-        std::vector<std::shared_ptr<shonMondelerTriangle>> badTriangles;
+        std::vector<std::shared_ptr<MySimModTriangle>> badTriangles;
         for (const auto& oneTriangle : triangles_)
         {
             if (oneTriangle->isInCircumCircle(oneNode->position_))
@@ -445,7 +445,7 @@ void face::triangulateBowyerWatson()
 
         for (const auto& oneEdge : polygon)
         {
-            auto newTriangle = std::make_shared<shonMondelerTriangle>(
+            auto newTriangle = std::make_shared<MySimModTriangle>(
                 oneEdge[0], oneEdge[1], nodeID, nodes_);
             triangles_.push_back(newTriangle);
         }
@@ -482,7 +482,7 @@ void face::triangulateBowyerWatson()
     nodes_.resize(nodes_.size() - 3);
 }
 
-std::shared_ptr<shonMondelerTriangle> face::getSuperTriangle()
+std::shared_ptr<MySimModTriangle> face::getSuperTriangle()
 {
     vec3d min = nodes_[0]->position_;
     vec3d max = nodes_[0]->position_;
@@ -516,7 +516,7 @@ std::shared_ptr<shonMondelerTriangle> face::getSuperTriangle()
     nodes_.push_back(b);
     nodes_.push_back(c);
     UIN numNodes = nodes_.size();
-    auto superTriangle = std::make_shared<shonMondelerTriangle>(
+    auto superTriangle = std::make_shared<MySimModTriangle>(
         numNodes - 3, numNodes - 2, numNodes - 1, nodes_);
     return superTriangle;
 }
@@ -573,4 +573,4 @@ void face::writeVerticesToVTK(const std::string& fileName) const
     writer->SetInputData(unstructuredGrid);
     writer->Write();
 }
-}  // namespace shonCloud
+}  // namespace MySim

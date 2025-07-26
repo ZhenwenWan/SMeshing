@@ -5,13 +5,13 @@
 
 #include "geometricModel.hpp"
 #include "node.hpp"
-#include "shonMondelerTriangle.hpp"
+#include "MySimModTriangle.hpp"
 #include "surface.hpp"
 
 #include <memory>
 #include <vector>
 
-namespace shonCloud
+namespace MySim
 {
 class tetMesh
 {
@@ -26,5 +26,5 @@ class tetMesh
    private:
 };
 
-}  // namespace shonCloud
+}  // namespace MySim
 #endif  // H_SHONDY_TETMESH

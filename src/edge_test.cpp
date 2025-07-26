@@ -8,7 +8,7 @@
 
 TEST_CASE("edge", "[edge]")
 {
-    using namespace shonCloud;
+    using namespace MySim;
     SECTION("parameterTransformation")
     {
         vec3d p1(0, 0, 0);

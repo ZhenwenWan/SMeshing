@@ -4,7 +4,7 @@
 #include "definitions.hpp"
 #include "edge.hpp"
 
-namespace shonCloud
+namespace MySim
 {
 class wire
 {
@@ -15,5 +15,5 @@ class wire
     std::map<int, std::shared_ptr<edge>> edges_;
 };
 
-}  // namespace shonCloud
+}  // namespace MySim
 #endif  // H_SHONDY_WIRE

@@ -1,6 +1,6 @@
 #include "edge.hpp"
 #include "logger.hpp"
-#include "shonModelerEnums.hpp"
+#include "MySimModEnums.hpp"
 
 #include <BRep_Tool.hxx>
 #include <GeomAPI_ProjectPointOnCurve.hxx>
@@ -9,7 +9,7 @@
 #include <ShapeAnalysis_Edge.hxx>
 #include <TopoDS.hxx>
 
-namespace shonCloud
+namespace MySim
 {
 edge::edge(const TopoDS_Edge& occEdge, int tag) : tag_(tag)
 {
@@ -26,11 +26,11 @@ edge::edge(const TopoDS_Edge& occEdge, int tag) : tag_(tag)
     }
     if (occCurve_->DynamicType() == STANDARD_TYPE(Geom_Circle))
     {
-        geometryType_ = shonModeler::edgeGeometryTypes::circle;
+        geometryType_ = MySimMod::edgeGeometryTypes::circle;
     }
     else if (occCurve_->DynamicType() == STANDARD_TYPE(Geom_Line))
     {
-        geometryType_ = shonModeler::edgeGeometryTypes::line;
+        geometryType_ = MySimMod::edgeGeometryTypes::line;
     }
     else
     {
@@ -53,7 +53,7 @@ void edge::seedVertices(double meshSize, int maxVertexTag)
                               .distance(pointFromParameter(uBounds_.first));
 
     int numberOfNodes = (int)round(length / meshSize);
-    if (geometryType_ == shonModeler::edgeGeometryTypes::circle)
+    if (geometryType_ == MySimMod::edgeGeometryTypes::circle)
     {
         double radius = Handle(Geom_Circle)::DownCast(occCurve_)->Radius();
         double circleLength = radius * (uBounds_.second - uBounds_.first);
@@ -68,7 +68,7 @@ void edge::seedVertices(double meshSize, int maxVertexTag)
         const vec3d position = pointFromParameter(uNode);
         ++maxVertexTag;
         auto newVertex = std::make_shared<vertex>(
-            position, shonModeler::vertexTypes::onEdge);
+            position, MySimMod::vertexTypes::onEdge);
         newVertex->tag_ = maxVertexTag;
         vertices_.insert({maxVertexTag, newVertex});
     }
@@ -94,4 +94,4 @@ vec3d edge::pointFromParameter(double u) const
     return vec3d(pnt.X(), pnt.Y(), pnt.Z());
 }
 
-}  // namespace shonCloud
+}  // namespace MySim

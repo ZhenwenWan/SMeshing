@@ -3,7 +3,7 @@
 
 #include "basicGeometry.hpp"
 
-namespace shonCloud
+namespace MySim
 {
 class Sphere : public basicGeometry
 {
@@ -68,6 +68,6 @@ inline bool Sphere::behind(const vec3d& point,
     }
 }
 
-}  // namespace shonCloud
+}  // namespace MySim
 
 #endif  // H_SHONDY_SPHERE

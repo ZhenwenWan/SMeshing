@@ -8,7 +8,7 @@
 #include <memory>
 #include <vector>
 
-namespace shonCloud
+namespace MySim
 {
 class tetra
 {
@@ -49,5 +49,5 @@ inline vec3d tetra::centerQuick(
 bool sameTriangle(const std::array<UIN, 3>& triangle1,
                   const std::array<UIN, 3>& triangle2);
 
-}  // namespace shonCloud
+}  // namespace MySim
 #endif  // H_SHONDY_TETRA

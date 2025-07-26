@@ -1,7 +1,7 @@
 #include "tetra.hpp"
-#include "shonMondelerTriangle.hpp"
+#include "MySimModTriangle.hpp"
 
-namespace shonCloud
+namespace MySim
 {
 tetra::tetra(UIN a, UIN b, UIN c, UIN d,
              const std::vector<std::shared_ptr<node>>& nodesGlobal)
@@ -64,7 +64,7 @@ void tetra::setSphere(const std::vector<std::shared_ptr<node>>& nodesGlobal)
         sphere_.centerPoint_ = {0, 0, 0};
         return;
     }
-    auto xTriangle = std::make_shared<shonMondelerTriangle>(
+    auto xTriangle = std::make_shared<MySimModTriangle>(
         nodes_[0], nodes_[1], nodes_[2], nodesGlobal);
     const vec3d& pO_ABC = xTriangle->circumCenter_.centerPoint_;
     double height = std::sqrt(xRadius * xRadius - pO_ABC.squareDist(pA));
@@ -118,4 +118,4 @@ bool sameTriangle(const std::array<UIN, 3>& triangle1,
     return true;
 }
 
-}  // namespace shonCloud
+}  // namespace MySim

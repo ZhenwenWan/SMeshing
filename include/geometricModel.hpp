@@ -10,7 +10,7 @@
 #include <TopTools_DataMapOfShapeInteger.hxx>
 #include <TopoDS.hxx>
 
-namespace shonCloud
+namespace MySim
 {
 class geometricModel
 {
@@ -53,5 +53,5 @@ class geometricModel
     TopTools_DataMapOfShapeInteger occVerices_;
 };
 
-}  // namespace shonCloud
+}  // namespace MySim
 #endif  // H_SHONDY_GEOMETRICMODEL

@@ -5,7 +5,7 @@
 #include "surfaceBase.hpp"
 #include "treeAABB.hpp"
 
-namespace shonCloud
+namespace MySim
 {
 class surface : public surfaceBase
 {
@@ -36,5 +36,5 @@ class surface : public surfaceBase
     std::shared_ptr<treeAABB> treeAABB_;
 };
 
-}  // namespace shonCloud
+}  // namespace MySim
 #endif  // H_SHONDY_SURFACE

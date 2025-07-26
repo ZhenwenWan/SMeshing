@@ -5,7 +5,7 @@
 
 TEST_CASE("tetra", "[tetra]")
 {
-    using namespace shonCloud;
+    using namespace MySim;
     SECTION("copy and resize")
     {
         REQUIRE(2 == 2);

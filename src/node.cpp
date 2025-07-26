@@ -1,9 +1,9 @@
 #include "node.hpp"
 
-namespace shonCloud
+namespace MySim
 {
 node::node(const vec3d& point) : position_(point), owner_(), id_(0)
 {
 }
 
-}  // namespace shonCloud
+}  // namespace MySim

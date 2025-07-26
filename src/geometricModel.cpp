@@ -12,7 +12,7 @@
 #include <TopoDS_Vertex.hxx>
 #include <TopoDS_Wire.hxx>
 
-namespace shonCloud
+namespace MySim
 {
 geometricModel::geometricModel()
 {
@@ -272,4 +272,4 @@ int geometricModel::maxVertexTag() const
     return maxTag;
 }
 
-}  // namespace shonCloud
+}  // namespace MySim

@@ -1,9 +1,9 @@
-#include "shonMondelerTriangle.hpp"
+#include "MySimModTriangle.hpp"
 #include <memory>
 
-namespace shonCloud
+namespace MySim
 {
-shonMondelerTriangle::shonMondelerTriangle(
+MySimModTriangle::MySimModTriangle(
     UIN a, UIN b, UIN c, const std::vector<std::shared_ptr<node>>& nodesGlobal)
     : nodes_({a, b, c}), edges_()
 {
@@ -27,7 +27,7 @@ shonMondelerTriangle::shonMondelerTriangle(
     vertices_.push_back(nodesGlobal[c]);
 }
 
-bool shonMondelerTriangle::isInCircumCircle(const vec3d& point) const
+bool MySimModTriangle::isInCircumCircle(const vec3d& point) const
 {
     if (distance(point, circumCenter_.centerPoint_) < circumCenter_.radius_)
     {
@@ -36,7 +36,7 @@ bool shonMondelerTriangle::isInCircumCircle(const vec3d& point) const
     return false;
 }
 
-bool shonMondelerTriangle::isInside(const vec3d& point) const
+bool MySimModTriangle::isInside(const vec3d& point) const
 {
     const vec3d& pA = vertices_[0]->position_;
     const vec3d& pB = vertices_[1]->position_;
@@ -54,7 +54,7 @@ bool shonMondelerTriangle::isInside(const vec3d& point) const
     return true;
 }
 
-void shonMondelerTriangle::setCircumCenter(
+void MySimModTriangle::setCircumCenter(
     const std::vector<std::shared_ptr<node>>& nodesGlobal)
 {
     const vec3d& a = nodesGlobal[nodes_[0]]->position_;
@@ -72,7 +72,7 @@ void shonMondelerTriangle::setCircumCenter(
     circumCenter_.centerPoint_ = a + toCircumsphereCenter;
 }
 
-bool shonMondelerTriangle::hasNode(const UIN oneNode) const
+bool MySimModTriangle::hasNode(const UIN oneNode) const
 {
     if ((nodes_[0] == oneNode) || (nodes_[1] == oneNode) ||
         (nodes_[2] == oneNode))
@@ -92,4 +92,4 @@ bool sameEdge(const std::array<UIN, 2>& edge1, const std::array<UIN, 2>& edge2)
     return false;
 }
 
-}  // namespace shonCloud
+}  // namespace MySim

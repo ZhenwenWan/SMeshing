@@ -4,7 +4,7 @@
 #include "definitions.hpp"
 #include <memory>
 
-namespace shonCloud
+namespace MySim
 {
 class tetra;
 class node
@@ -24,5 +24,5 @@ inline const vec3d& node::center() const
     return position_;
 }
 
-}  // namespace shonCloud
+}  // namespace MySim
 #endif  // H_SHONDY_NODE

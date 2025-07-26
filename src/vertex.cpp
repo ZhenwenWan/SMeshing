@@ -1,12 +1,12 @@
 #include "vertex.hpp"
 
-#include "shonModelerEnums.hpp"
+#include "MySimModEnums.hpp"
 #include <BRep_Tool.hxx>
 #include <gp_Pnt.hxx>
-namespace shonCloud
+namespace MySim
 {
 vertex::vertex(const TopoDS_Vertex& occVertex, int tag)
-    : tag_(tag), type_(shonModeler::vertexTypes::fixed)
+    : tag_(tag), type_(MySimMod::vertexTypes::fixed)
 {
     const gp_Pnt pnt = BRep_Tool::Pnt(occVertex);
     position_[0] = pnt.X();
@@ -19,4 +19,4 @@ vertex::vertex(const vec3d& position, int type)
 {
 }
 
-}  // namespace shonCloud
+}  // namespace MySim

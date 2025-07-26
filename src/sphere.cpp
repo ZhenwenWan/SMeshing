@@ -2,7 +2,7 @@
 #include "geometricRelations.hpp"
 #include "logger.hpp"
 
-namespace shonCloud
+namespace MySim
 {
 Sphere::Sphere() : basicGeometry(), radius_(0.0)
 {
@@ -13,4 +13,4 @@ Sphere::Sphere(vec3d centerPoint, double radius, vec3d normal)
 {
 }
 
-}  // namespace shonCloud
+}  // namespace MySim

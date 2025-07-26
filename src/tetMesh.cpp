@@ -1,7 +1,7 @@
 #include "tetMesh.hpp"
 #include "edge.hpp"
-#include "shonModelerEnums.hpp"
-#include "shonMondelerTriangle.hpp"
+#include "MySimModEnums.hpp"
+#include "MySimModTriangle.hpp"
 #include "tetra.hpp"
 #include "vectorUtil.hpp"
 
@@ -19,7 +19,7 @@
 #include <memory>
 #include <vector>
 
-namespace shonCloud
+namespace MySim
 {
 tetMesh::tetMesh()
 {
@@ -48,4 +48,4 @@ void tetMesh::meshFaces(const double& meshSize)
     }
 }
 
-}  // namespace shonCloud
+}  // namespace MySim

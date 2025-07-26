@@ -8,12 +8,12 @@
 #include <memory>
 #include <vector>
 
-namespace shonCloud
+namespace MySim
 {
-class shonMondelerTriangle
+class MySimModTriangle
 {
    public:
-    shonMondelerTriangle(UIN a, UIN b, UIN c,
+    MySimModTriangle(UIN a, UIN b, UIN c,
                          const std::vector<std::shared_ptr<node>>& nodesGlobal);
 
     std::array<UIN, 3> nodes_;
@@ -33,12 +33,12 @@ class shonMondelerTriangle
     std::vector<std::shared_ptr<node>> vertices_;
 };
 
-inline const vec3d& shonMondelerTriangle::center() const
+inline const vec3d& MySimModTriangle::center() const
 {
     return circumCenter_.centerPoint_;
 }
 
-inline vec3d shonMondelerTriangle::centerQuick(
+inline vec3d MySimModTriangle::centerQuick(
     const std::vector<std::shared_ptr<node>>& nodesGlobal) const
 {
     const auto& A = nodesGlobal[nodes_[0]]->position_;
@@ -49,5 +49,5 @@ inline vec3d shonMondelerTriangle::centerQuick(
 
 bool sameEdge(const std::array<UIN, 2>& edge1, const std::array<UIN, 2>& edge2);
 
-}  // namespace shonCloud
+}  // namespace MySim
 #endif  // H_SHONDY_TRIANGLE

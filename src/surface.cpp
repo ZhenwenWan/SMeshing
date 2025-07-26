@@ -1,7 +1,7 @@
 #include "surface.hpp"
 #include "enums.hpp"
 
-namespace shonCloud
+namespace MySim
 {
 surface::surface(const std::string& fileName) : surfaceBase()
 {
@@ -19,4 +19,4 @@ double surface::distanceToTriangle(const vec3d& point) const
     return std::sqrt(dist);
 }
 
-}  // namespace shonCloud
+}  // namespace MySim

@@ -4,13 +4,13 @@
 #include "definitions.hpp"
 #include "face.hpp"
 #include "node.hpp"
-#include "shonMondelerTriangle.hpp"
+#include "MySimModTriangle.hpp"
 #include "tetra.hpp"
 #include "vertex.hpp"
 #include "wire.hpp"
 #include <TopoDS_Solid.hxx>
 
-namespace shonCloud
+namespace MySim
 {
 class solid
 {
@@ -33,7 +33,7 @@ class solid
     int geometryType_;
     std::pair<vec3d, vec3d> uvwBounds_;
     std::pair<vec3d, vec3d> boundingBox_;
-    std::vector<std::shared_ptr<shonMondelerTriangle>> triangles_;
+    std::vector<std::shared_ptr<MySimModTriangle>> triangles_;
     std::vector<std::shared_ptr<tetra>> tetras_;
     std::vector<std::shared_ptr<node>> nodes_;
 
@@ -53,5 +53,5 @@ class solid
     // void getFaceAndGeometryNodes(vectorVec3d& nodes) const;
 };
 
-}  // namespace shonCloud
+}  // namespace MySim
 #endif  // H_SHONDY_SOLID

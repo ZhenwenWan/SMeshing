@@ -3,7 +3,7 @@
 
 #include "definitions.hpp"
 
-namespace shonModeler
+namespace MySimMod
 {
 enum vertexTypes : int
 {
@@ -24,5 +24,5 @@ enum faceGeometryTypes : int
     sphere = 1,
 };
 
-}  // namespace shonModeler
+}  // namespace MySimMod
 #endif  // H_SHONDY_SHONMODELERENUMS

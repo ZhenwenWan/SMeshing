@@ -1,9 +1,9 @@
 #include "wire.hpp"
 
-namespace shonCloud
+namespace MySim
 {
 wire::wire(int tag) : tag_(tag)
 {
 }
 
-}  // namespace shonCloud
+}  // namespace MySim

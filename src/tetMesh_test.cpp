@@ -1,15 +1,15 @@
 #include "tetMesh.hpp"
 #include <catch.hpp>
 
-#include "shonModelerEnums.hpp"
+#include "MySimModEnums.hpp"
 
 #include "boost/filesystem.hpp"
-#include "shonModelerEnums.hpp"
+#include "MySimModEnums.hpp"
 #include <iostream>
 
 TEST_CASE("tetMesh", "[tetMesh]")
 {
-    using namespace shonCloud;
+    using namespace MySim;
 
     // SECTION("fromSurface")
     //{

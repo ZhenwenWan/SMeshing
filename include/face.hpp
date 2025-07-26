@@ -3,13 +3,13 @@
 
 #include "definitions.hpp"
 #include "node.hpp"
-#include "shonMondelerTriangle.hpp"
+#include "MySimModTriangle.hpp"
 #include "vertex.hpp"
 #include "wire.hpp"
 #include <Geom_Surface.hxx>
 #include <TopoDS_Face.hxx>
 
-namespace shonCloud
+namespace MySim
 {
 class face
 {
@@ -34,7 +34,7 @@ class face
     int geometryType_;
     std::pair<vec2d, vec2d> uvBounds_;
     std::pair<vec3d, vec3d> boundingBox_;
-    std::vector<std::shared_ptr<shonMondelerTriangle>> triangles_;
+    std::vector<std::shared_ptr<MySimModTriangle>> triangles_;
     std::vector<std::shared_ptr<node>> nodes_;
 
     std::map<int, std::shared_ptr<vertex>> vertices_;
@@ -46,11 +46,11 @@ class face
     const TopoDS_Face occFaceTopo_;
     double geometryTolerance_;
     void setBoundingBox(const TopoDS_Face& occFace);
-    std::shared_ptr<shonMondelerTriangle> getSuperTriangle();
+    std::shared_ptr<MySimModTriangle> getSuperTriangle();
     bool isPointCloseVertex(const vec3d& point, double distThreshold) const;
 
     void getEdgeAndGeometryNodes(vectorVec3d& nodes) const;
 };
 
-}  // namespace shonCloud
+}  // namespace MySim
 #endif  // H_SHONDY_FACE
